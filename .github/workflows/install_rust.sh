@@ -6,5 +6,5 @@ rustup default nightly
 if [ "$(uname)" == "Darwin" ]; then
     brew install openssl@1.1
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    sudo apt-get install pkg-config libssl-dev
+    yum install -y openssl-devel
 fi
