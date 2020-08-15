@@ -24,7 +24,7 @@ fn main() {
     let archive_file = File::open(&archive).expect("Could not open archive");
     let tar = BzDecoder::new(archive_file);
     let mut _archive = Archive::new(tar);
-    _archive.unpack(out_dir).expect("uh-oh");
+    _archive.unpack(&out_dir).expect("uh-oh");
 
     println!("cargo:rustc-link-search={}/lib", out_dir);
     println!("cargo:rustc-link-lib=static-nobundle=mkl_intel_ilp64");
