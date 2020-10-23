@@ -4,13 +4,6 @@ on: [push, pull_request]
 
 
 jobs:
-  steps:
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-
-
   build_wheels:
     name: Build wheels on ${{ matrix.os }} ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
